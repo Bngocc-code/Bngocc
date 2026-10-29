@@ -40,7 +40,27 @@ const qs=[
 {q:'Choose the correct sentence:',a:['There is many benefits.','There are many benefits.','There be many benefits.','There has many benefits.'],c:1,x:'Use “there are” with plural nouns such as benefits.'},
 {q:'“Although” is used to show…',a:['Contrast','Purpose','Time only','A list'],c:0,x:'Although introduces a contrast between two ideas.'},
 {q:'Which word means “tiết kiệm năng lượng”?',a:['Waste energy','Save energy','Create litter','Cause traffic'],c:1,x:'Save energy means use less energy.'},
-{q:'Choose the correct reported speech: He said, “I am tired.”',a:['He said he is tired yesterday.','He said that he was tired.','He said that I was tired.','He told that he tired.'],c:1,x:'In reported speech, “am” usually changes to “was” when the reporting verb is in the past.'}
+{q:'Choose the correct reported speech: He said, “I am tired.”',a:['He said he is tired yesterday.','He said that he was tired.','He said that I was tired.','He told that he tired.'],c:1,x:'In reported speech, “am” usually changes to “was” when the reporting verb is in the past.'},
+{q:"Choose the correct form: We ___ English for three years.",a:["study","studied since","have studied","are study"],c:2,x:"Use the present perfect with “for” to describe an action continuing until now."},
+{q:"Which word means “ô nhiễm”?",a:["Pollution","Solution","Tradition","Volunteer"],c:0,x:"Pollution means harmful substances or waste entering the environment."},
+{q:"Complete: You should ___ the lights when you leave.",a:["turn off","turn on","look after","take part"],c:0,x:"“Turn off” means switch something off."},
+{q:"Choose the correct passive sentence: People speak English worldwide.",a:["English speaks worldwide.","English is spoken worldwide.","English was speak worldwide.","English is speaking worldwide."],c:1,x:"Present simple passive: am/is/are + past participle."},
+{q:"What is the past participle (V3) of “write”?",a:["Writed","Wrote","Written","Writing"],c:2,x:"The verb forms are write – wrote – written."},
+{q:"Choose the correct conditional: If it rains, we ___ at home.",a:["stayed","will stay","would stayed","staying"],c:1,x:"First conditional: If + present simple, will + base verb."},
+{q:"Which phrase means “gây ra”?",a:["Take care of","Look forward to","Cause","Participate in"],c:2,x:"“Cause” means make something happen."},
+{q:"Choose the correct word form: We need to find a ___ to this problem. (SOLVE)",a:["solution","solving","solved","solvable"],c:0,x:"“Solution” is the noun formed from “solve”."},
+{q:"Which activity helps the environment?",a:["Wasting water","Burning rubbish","Planting trees","Dropping litter"],c:2,x:"Planting trees helps green spaces and can absorb carbon dioxide."},
+{q:"Complete: My sister is interested ___ learning Japanese.",a:["at","in","on","with"],c:1,x:"The correct structure is “be interested in + noun/V-ing”."},
+{q:"Choose the correct sentence.",a:["She enjoys to read.","She enjoy reading.","She enjoys reading.","She enjoying read."],c:2,x:"“Enjoy” is followed by a gerund (V-ing), and “she” takes enjoys."},
+{q:"What does “cultural diversity” mean?",a:["Only one tradition","A variety of cultures","A lack of customs","A type of pollution"],c:1,x:"Cultural diversity means the presence of different cultures and traditions."},
+{q:"Choose the correct reported speech: Lan said, “I can swim.”",a:["Lan said she can swam.","Lan said that she could swim.","Lan said I could swim.","Lan told she can swim."],c:1,x:"In reported speech, “can” usually changes to “could”."},
+{q:"Which word is an adjective?",a:["Carefully","Protection","Protect","Protective"],c:3,x:"“Protective” is an adjective; “carefully” is an adverb and “protection” is a noun."},
+{q:"Complete: We are looking forward to ___ you.",a:["meet","meeting","met","be meet"],c:1,x:"“Look forward to” is followed by a noun or V-ing."},
+{q:"Which is the best synonym for “reduce”?",a:["Increase","Make smaller","Create","Collect"],c:1,x:"Reduce means to make something less or smaller."},
+{q:"Choose the correct comparative: This activity is ___ than the last one.",a:["interesting","more interesting","most interesting","interestinger"],c:1,x:"For longer adjectives, use “more + adjective + than”."},
+{q:"What should you do to save water?",a:["Leave the tap running","Take unnecessarily long showers","Fix leaking taps","Wash one item at a time"],c:2,x:"Fixing leaks prevents water from being wasted."},
+{q:"Choose the correct form: The festival ___ every spring.",a:["celebrates","is celebrated","celebrated it","is celebrating"],c:1,x:"Use the present simple passive when the subject receives the action."},
+{q:"Which phrase means “chăm sóc”?",a:["Look after","Give up","Find out","Turn down"],c:0,x:"“Look after” means take care of someone or something."}
 ];
 let qi=0,score=0,done=false;
 function render(){const q=qs[qi];$('#qCount').textContent='Question '+(qi+1)+' / '+qs.length;$('#score').textContent='Score: '+score;$('#bar').style.width=(qi/qs.length*100)+'%';$('#question').textContent=q.q;$('#feedback').textContent='';$('#nextBtn').disabled=true;$('#nextBtn').textContent=qi===qs.length-1?'See my result ✨':'Next question →';$('#answers').innerHTML='';done=false;q.a.forEach((v,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=String.fromCharCode(65+i)+'. '+v;b.onclick=()=>choose(i,b);$('#answers').append(b)})}
